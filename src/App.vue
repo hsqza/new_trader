@@ -2,9 +2,8 @@
   <div>
     <div class="container">
       <div class="row">
-        <div class="col-sm-6 bg-success">
         <div class="col-12">
-          <p>Let's start</p>
+          <p class="text-center">Let's start</p>
         </div>
       </div>
     </div>
