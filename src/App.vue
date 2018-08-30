@@ -3,7 +3,8 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-6 bg-success">
-          Hey
+        <div class="col-12">
+          <p>Let's start</p>
         </div>
       </div>
     </div>
