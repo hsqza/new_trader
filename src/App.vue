@@ -1,12 +1,6 @@
 <template>
-  <div>
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <p class="text-center">Let's start</p>
-        </div>
-      </div>
-    </div>
+  <div class="container">
+    <router-view></router-view>
   </div>
 </template>
 
