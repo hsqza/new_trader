@@ -32,6 +32,7 @@
          stockPrice: this.stock.price,
          quantity: this.quantity
        }
+       console.log(order);
        this.quantity = 0;
      }
    },
