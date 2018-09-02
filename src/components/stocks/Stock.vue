@@ -1,7 +1,7 @@
 <template>
   <div class="col-sm-6 col-md-4">
     <div class="card my-3">
-      <div class="card-header bg-warning">
+      <div class="card-header bg-success">
         <h3 class="panel-title">
           {{stock.name}}: <small>(Price: {{stock.price}})</small>
         </h3>
@@ -33,6 +33,7 @@
          quantity: this.quantity
        }
        console.log(order);
+      this.$store.dispatch('buyStock', order)
        this.quantity = 0;
      }
    },
