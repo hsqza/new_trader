@@ -11,7 +11,7 @@
         <button
           class="btn btn-primary"
           @click="sellStock"
-          :disabled="insufficientQuantity || quantity <= 0">{{ insufficientQuantity ? 'Insufficient Quantity' : 'Buy' }}</button>
+          :disabled="insufficientQuantity || quantity <= 0">{{ insufficientQuantity ? 'Insufficient Quantity' : 'Sell' }}</button>
       </div>
     </div>
   </div>
