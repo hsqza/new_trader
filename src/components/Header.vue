@@ -13,20 +13,22 @@
         <router-link to="/stocks" class="nav-item" activeClass="active" tag="li"><a class="nav-link">Stocks</a></router-link>
       </ul>
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item" activeClass="active"><a href="#" class="nav-link" @click="endDay">End Day</a></li>
-        <li class="nav-item dropdown" activeClass="active">
+        <li class="nav-item" activeClass="active">
+          <a href="#" class="nav-link" @click="endDay">End Day</a>
+        </li>
+        <li class="nav-item dropdown" activeClass="active" @click.prevent="isDropdownOpen = !isDropdownOpen">
           <a href=""
               class="dropdown-toggle nav-link"
-              data-toggle="dropdown"
+              data-toggle="dropdown-menu"
               role="button"
               aria-haspopup="true"
               aria-expanded="false">
             Save & Load
             <span class="caret"></span>
           </a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Save Data</a></li>
-            <li><a href="#">Load Data</a></li>
+          <ul class="dropdown-menu" :class="{show: isDropdownOpen}">
+            <li><a href="#" class="nav-link">Save Data</a></li>
+            <li><a href="#" class="nav-link">Load Data</a></li>
           </ul>
         </li>
       </ul>
@@ -40,6 +42,11 @@
   import { mapActions } from 'vuex';
 
   export default {
+    data() {
+      return {
+        isDropdownOpen: false
+      }
+    },
     computed: {
       funds() {
         return this.$store.getters.funds;
