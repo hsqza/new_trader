@@ -30,6 +30,7 @@
           </ul>
         </li>
       </ul>
+      <strong class="navbar-text">Funds: {{funds}}</strong>
     </div>
   </nav>
 </template>
@@ -66,3 +67,13 @@
   }
 
 </style>
+
+<script>
+  export default {
+    computed: {
+      funds() {
+        return this.$store.getters.funds;
+      }
+    }
+  }
+</script>
