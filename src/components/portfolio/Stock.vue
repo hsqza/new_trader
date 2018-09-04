@@ -7,11 +7,11 @@
         </h3>
       </div>
       <div class="card-body d-flex flex-row">
-        <input type="number" class="form-control" placeholder="Quantity" v-model="quantity">
+        <input type="number" class="form-control" placeholder="Quantity" v-model="quantity" :class="{danger: insufficientQuantity}">
         <button
           class="btn btn-primary"
           @click="sellStock"
-          :disabled="quantity <= 0">Sell</button>
+          :disabled="insufficientQuantity || quantity <= 0">{{ insufficientQuantity ? 'Insufficient Quantity' : 'Buy' }}</button>
       </div>
     </div>
   </div>
@@ -27,6 +27,11 @@
        quantity: 0
      }
    },
+   computed: {
+       insufficientQuantity() {
+         return this.quantity > this.stock.quantity;
+       }
+     },
    methods: {
      ...mapActions({
        placeSellOrder: 'sellStock'
@@ -43,3 +48,9 @@
    }
   }
 </script>
+
+<style lang="scss" scoped>
+  .danger {
+    border: 1px solid red;
+  }
+</style>

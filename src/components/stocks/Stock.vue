@@ -7,7 +7,7 @@
         </h3>
       </div>
       <div class="card-body d-flex flex-row">
-        <input type="number" :class="['form-control', {danger: insufficientFunds}]" placeholder="Quantity" v-model="quantity">
+        <input type="number" class="form-control" :class="{danger: insufficientFunds}" placeholder="Quantity" v-model="quantity">
         <button
           class="btn btn-success"
           @click="buyStock"
@@ -52,7 +52,7 @@
   @import '../../../node_modules/bootstrap/scss/bootstrap.scss';
 
   .danger {
-    border: 2px solid red;
+    border: 1px solid red;
   }
 
 </style>
